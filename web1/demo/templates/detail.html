@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width:50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th, td {
+    padding: 15px;
+    text-align: left;
+    }
+    #t01 {
+    width: 100%;    
+    background-color: #008000;
+    }
+    body{
+        background-color: #0000FF;
+        color:#FFFFFF;
+        font: 20px bold ariel,sans-serif;
+    }
+</style>
+
+<body>
+<h1 style="color:Lime">worker details</h1>
+<table id="to1">
+    <tr>
+        <th style="color:GreenYellow">name</th>
+        <th style="color:GreenYellow">user-id</th>
+        <th style="color:GreenYellow">work</th>
+        <th style="color:GreenYellow">mail</th>
+        <th style="color:GreenYellow">phnno</th>
+    </tr>
+    {% for item in query_result %}
+    <tr>
+        <td style="color:GreenYellow">{{ item.Name }}</td>
+        <td style="color:GreenYellow">{{ item.user_ID }}</td>
+        <td style="color:GreenYellow">{{ item.work }}</td>
+        <td style="color:GreenYellow">{{ item.Mail }}</td>
+        <td style="color:GreenYellow">{{ item.Phnno }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a class="nav-link" href="{% url 'book' %}" style="color:red">book slot</a>
+</body>
+</html>
